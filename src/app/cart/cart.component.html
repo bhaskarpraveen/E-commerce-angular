@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<div class="center">
+    <div class="products" >
+        
+
+        <mat-list  role="list">
+            <div *ngIf="cart.length;else noitems">
+            <mat-list-item role="listitem">Item name &#160;&#160; &#160; &#160;&#160; &#160;   price</mat-list-item> 
+       
+       
+            <div *ngFor="let item of cart">
+            <br>
+            <mat-list-item role="listitem">{{item.name}} &#160;&#160; &#160;&#160; &#160; &#160;&#160; &#160;{{item.price}} &#160; <button (click)="removeItem(item)" mat-raised-button color="primary">Remove item</button></mat-list-item>
+        </div>
+
+        <h1>Total cost: {{total}}</h1>
+        <h1>Total items: {{cart.length}}</h1>
+    </div>
+        <ng-template #noitems>
+            <mat-list-item role="listitem">No items in cart!!</mat-list-item> 
+        </ng-template>
+          </mat-list>
+    </div>
+</div>
